@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+	<link rel="stylesheet" href="{% static 'css/otherpages-styles.css' %}">
+{% endblock link %}
+
+{% block logo %}DONATE{% endblock logo %}
+
+{% block body %}
+	<div class="main-block">		
+		<p class="page__info text-center">If you want to help the developer financially, you can transfer money to him:</p>
+		<button class="page__btn donate__btn">SEND &#8594</button>
+	</div>
+{% endblock body %}
+{% block scripts %}
+	<script src="{% static 'js/otherpages-scripts.js' %}"></script>
+{% endblock scripts %}

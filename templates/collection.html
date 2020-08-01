@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+	<link rel="stylesheet" href="{% static 'css/collection-styles.css' %}">
+{% endblock link %}
+
+{% block logo %}COLLECTION{% endblock logo %}
+
+{% block body %}
+	<div class="item_active__shadow-block display-none"></div>
+	<div class="main-block">
+		<div class="collection__progressbar progress">
+		  <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 24%;"></div>
+		</div>
+		<section class="collection__block col-12 col-xl-10 offset-xl-1">
+		  <div class="collection__item"><img src="{% static 'img/collection-items/collection-item-1.png' %}" alt="Карта" class="collection__item__image"></div>
+		  <div class="collection__item"><img src="{% static 'img/collection-items/collection-item-2.png' %}" alt="Карта" class="collection__item__image"></div>
+		  <div class="collection__item"><img src="{% static 'img/collection-items/collection-item-3.png' %}" alt="Карта" class="collection__item__image"></div>
+		  <div class="collection__item"><img src="{% static 'img/collection-items/collection-item-4.png' %}" alt="Карта" class="collection__item__image"></div>
+		  <div class="collection__item"><img src="{% static 'img/collection-items/collection-item-5.png' %}" alt="Карта" class="collection__item__image"></div>
+		</section>
+	</div>
+{% endblock body %}
+{% block scripts %}
+	<script src="{% static 'js/collection-scripts.js' %}"></script>
+{% endblock scripts %}

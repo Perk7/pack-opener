@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pack Opener</title>
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Custom styles -->
+    {% block link %}
+    {% endblock link %}
+
+    <!-- Main styles -->
+    <link rel="stylesheet" href="{% static 'css/main-styles.css' %}">
+
+    <!-- Favicon -->
+    <link rel="icon" href="" type="image/x-icon" />
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+  </head>
+  <body>
+    <header class="container-fluid mg-pd-off row">
+      <div class="top-header mg-pd-off row col-12 col-lg-6">
+        <button class="button-main-menu col-2 col-md-3 col-lg-3 col-xl-2 offset-xl-2"><img class="button-main-menu__image" src="{% static 'img/menu-icon.svg' %}" alt="menu"></button>
+        <div class="logo-perk col-5 offset-5 col-md-4 offset-md-5 col-lg-5 offset-lg-4 col-xl-4 offset-xl-4">{% block logo %}{% endblock logo %}</div>
+      </div>
+      <div class="bottom-header mg-pd-off row col-12 col-lg-6">
+        <div class="quantity-cards col-5 col-md-3 col-lg-4 col-xl-3">0/100<img class="bottom-header__img" src="{% static 'img/quantity-of-collection.svg' %}" alt="Количество"></div>
+        <div class="money-counter col-4 offset-3 col-md-3 offset-md-6 col-lg-4 offset-lg-4 col-xl-3 offset-xl-4">
+          <div class="money-counter__quantity">0</div>
+          <img class="bottom-header__img" src="{% static 'img/quantity-of-money.svg' %}" alt="Деньги">
+        </div>
+      </div>
+
+      <nav class="main-menu">
+        <ul class="main-menu__list display-none list-unstyled">
+          <li class="main-menu__item"><a href="/"><img class="main-menu__item__img"  src="{% static 'img/item__open-pack.svg' %}" alt="OP"> OPEN PACK</a></li>
+          <li class="main-menu__item"><a href="collection"><img class="main-menu__item__img"  src="{% static 'img/item__collection.svg' %}" alt="C"> COLLECTION</a></li>
+          <li class="main-menu__item"><a href=""><img class="main-menu__item__img"  src="{% static 'img/item__shop.svg' %}" alt="S"> SHOP</a></li>
+          <li class="main-menu__item"><a href="donate"><img class="main-menu__item__img"  src="{% static 'img/item__donate.svg' %}" alt="D"> DONATE</a></li>
+          <li class="main-menu__item"><a href="reset"><img class="main-menu__item__img"  src="{% static 'img/item__reset.svg' %}" alt="R"> RESET</a></li>
+        </ul>
+      </nav>  
+    </header>
+    <main>
+      {% block body %}
+      {% endblock body %}
+    </main>
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main-scripts.js' %}"></script>
+    <!-- Custom scripts -->
+    {% block scripts %}
+    {% endblock scripts %}
+  </body>
+</html> 

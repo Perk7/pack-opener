@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+	<link rel="stylesheet" href="{% static 'css/otherpages-styles.css' %}">
+{% endblock link %}
+
+{% block logo %}RESET{% endblock logo %}
+
+{% block body %}
+	<div class="main-block">		
+		<p class="page__info text-center">This will clear all your money and collection, are you sure that want to make it?</p>
+		<button class="page__btn reset__btn">RESET &#128711</button>
+	</div>
+{% endblock body %}
+{% block scripts %}
+	<script src="{% static 'js/otherpages-scripts.js' %}"></script>
+{% endblock scripts %}

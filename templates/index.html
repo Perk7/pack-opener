@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+	<link rel="stylesheet" href="{% static 'css/index-styles.css' %}">
+{% endblock link %}
+
+{% block logo %}PERK__7{% endblock logo %}
+
+{% block body %}
+	<div class="main-block">
+		<h3 class="open-pack__info">CLICK TO OPEN &#9660</h3>
+		<h3 class="open-pack__result">QuickSell of card</h3>
+		<button class="open-pack__button"></button>
+		<button class="open-pack__next"><a href="">NEXT &#8594</a></button>
+	</div>
+{% endblock body %}
+{% block scripts %}
+	<script src="{% static 'js/index-scripts.js' %}"></script>
+{% endblock scripts %}
