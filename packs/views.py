@@ -9,6 +9,9 @@ def index(request):
 def collection(request):
 	return render(request, 'collection.html')
 
+def shop(request):
+	return render(request, 'shop.html')
+
 def donate(request):
 	return render(request, 'donate.html')
 

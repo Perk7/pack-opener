@@ -5,8 +5,10 @@ from django.conf.urls.static import static
 app_name="packs"
 urlpatterns = [
     path('base', views.base),
+
     path('', views.index),
     path('collection', views.collection),
+    path('shop', views.shop),
     path('donate', views.donate),
     path('reset', views.reset),
 ]
