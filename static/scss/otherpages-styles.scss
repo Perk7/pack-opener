@@ -1,0 +1,212 @@
+// Переменные 
+
+@import "main-vars.scss";
+
+$donate-bgc : #d3be67;
+$reset-bgc : #ff7171;
+
+// Анимации
+
+div{}
+
+	@keyframes donate-hover {
+
+			0% {
+				background-color: $top-header_bg;
+				}
+			100% {
+				background-color: $donate-bgc;
+				}
+			}
+
+	@keyframes reset-hover {
+
+			0% {
+				background-color: $top-header_bg;
+				}
+			100% {
+				background-color: $reset-bgc;
+				}
+			}
+
+// Mobile First
+div {}
+
+// BG
+
+div {}
+
+	.main-block {
+			height: $mobile-hg;
+			padding-top: 15vw;
+
+			background-image: url(../img/index-bg__dark.png);
+			background-size: cover;
+		}
+
+// Надпись над кнопкой
+
+div {}
+
+	.page__info {
+			font-size: $mobile-sz - 2vw;
+			width: 62%;
+			margin-left: 19%;
+			color: #FFF;
+			font-weight: 500;
+		}
+
+// Кнопка
+
+div {}
+
+	.page__btn {
+			font-size: $mobile-sz - 2vw;
+			padding: 2vw 5vw;
+			background-color: $top-header_bg;
+			color: $top-header_fc;
+			font-weight: 500;
+			border-radius: 1vw;
+			margin: 10vw 0 0 35vw;
+		}
+
+	.reset__img {
+			height: $mobile-sz - 2vw;
+    		margin-top: -1vw;
+		}
+
+// Hover кнопки
+
+div {}
+
+	.reset__btn:hover {
+			animation: reset-hover 1s;
+			background-color: $reset-bgc;
+		}
+
+	.donate__btn:hover {
+			animation: donate-hover 1s;
+			background-color: $donate-bgc;
+		}
+
+// Малые девайсы («ландшафтные телефоны», >= 576px)
+div {}
+@media (min-width: 576px) { }
+
+// Средние девайсы («таблетки», >= 768px)
+div {}
+@media (min-width: 768px) { 
+
+// BG
+
+div {}
+
+	.main-block {
+			height: $tablet-hg;
+		}
+
+// Надпись над кнопкой
+
+div {}
+
+	.page__info {
+			font-size: $tablet-sz - 1vw;
+			width: 55%;
+			margin-left: 22.5%;
+		}
+
+// Кнопка
+
+div {}
+
+	.page__btn {
+			font-size: $tablet-sz - 1vw;
+			padding: 2vw 6vw;
+			border-radius: 1.5vw;
+			margin: 10vw 0 0 36.5vw;
+		}
+
+	.reset__img {
+			height: $tablet-sz - 1vw;
+    		margin-top: -0.8vw;
+		}
+ }
+
+// Большие девайсы (десктопы, >= 992px)
+div {}
+@media (min-width: 992px) { 
+
+// BG
+
+div {}
+
+	.main-block {
+			height: $desktop-hg;
+		}
+
+// Надпись над кнопкой
+
+div {}
+
+	.page__info {
+			font-size: $desktop-sz;
+			width: 45%;
+			margin-left: 27.5%;
+		}
+
+// Кнопка
+
+div {}
+
+	.page__btn {
+			font-size: $desktop-sz;
+		    padding: 1.5vw 5vw;
+		    border-radius: 1vw;
+			margin: 7vw 0 0 39.5vw;
+		}
+
+	.reset__img {
+			height: $desktop-sz;
+    		margin-top: -0.6vw;
+		}
+ }
+
+// Экстрабольшие девайсы (большие десктопы, >= 1200px)
+div {}
+@media (min-width: 1200px) { 
+
+// BG
+
+div {}
+
+	.main-block {
+			height: $large-hg;
+			padding-top: 8vw;
+		}
+
+// Надпись над кнопкой
+
+div {}
+
+	.page__info {
+			font-size: $large-sz;
+		    width: 30%;
+		    margin-left: 35%;
+		}
+
+// Кнопка
+
+div {}
+
+	.page__btn {
+			font-size: $large-sz;
+		    padding: 1vw 4.5vw;
+		    border-radius: 0.5vw;
+		    margin: 5vw 0 0 41.5vw;
+		}
+
+	.reset__img {
+			height: $large-sz;
+    		margin-top: -0.5vw;
+		}
+ }

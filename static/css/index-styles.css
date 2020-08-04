@@ -40,7 +40,7 @@
 .main-block {
   background-image: url(../img/index-bg.png);
   background-size: cover;
-  padding: 30vw 17.5vw 50vw; }
+  padding: 15vw 17.5vw 50vw; }
 
 .open-pack__button {
   clip-path: polygon(0% 12%, 20% 0%, 80% 0%, 100% 12%, 96% 85%, 50% 100%, 4% 85%);

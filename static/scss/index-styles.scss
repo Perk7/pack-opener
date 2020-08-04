@@ -1,0 +1,300 @@
+// Переменные 
+
+@import "main-vars.scss";
+
+$info-fc : #979797;
+
+$pack-cp : polygon(0% 12%, 20% 0%, 80% 0%, 100% 12%, 96% 85%, 50% 100%, 4% 85%);
+$card-cp : polygon(0% 0%, 100% 0%, 96% 8%, 95% 80%, 50% 91%, 7% 80%, 0% 0%);
+
+// Mobile First
+html {}
+
+@keyframes pulse {
+
+	50% {
+		color: $gold-fc;
+		transform: scale(1.1);
+		}
+	100% {
+		color: $info-fc;
+		transform: scale(1);
+		}
+	}
+
+@keyframes open-pack__btn {
+
+	0% {
+		background-image: url(../img/main-pack-icon.png);
+		clip-path: $pack-cp;
+		background-position: 0 0;
+		}
+	49% {
+		background-image: url(../img/main-pack-icon.png);
+		clip-path: $pack-cp;
+		background-position: 0 0;
+		}
+	50% {
+		transform: rotateY(90deg);
+		background-image: url(../img/card-demo.png);
+	    clip-path: $card-cp;
+	    background-position: -12px -10px;
+		}
+	100% {
+		transform: rotateY(0deg);
+		}
+	}
+
+@keyframes open-pack__info {
+
+	0% {
+		opacity: 1;
+		}
+	100% {
+		opacity: 0;
+		}
+	}
+
+@keyframes open-pack__next {
+
+	0% {
+		opacity: 0;
+		}
+
+	80% {
+		opacity: 0;
+		}
+
+	100% {
+		opacity: 1;
+		}
+	}
+
+// Карточка и BG
+
+div {}
+
+	.main-block {
+			background-image: url(../img/index-bg.png);
+			background-size: cover;
+			padding: 15vw 17.5vw 50vw;
+		}
+
+	.open-pack__button {
+	  		clip-path: $pack-cp;
+			width: 65vw;
+			height: 100vw;
+			background-image: url(../img/main-pack-icon.png);
+			background-color: #fff;
+			background-size: cover;
+		}
+
+	.open-pack__button_active {
+			clip-path: $card-cp;
+			animation: open-pack__btn 5s;
+			background-image: url(../img/card-demo.png);
+			background-position: -12px -10px;
+		}
+
+// Надпись над паком
+
+div {}
+
+	.open-pack__info {
+			color: $info-fc;
+			font-size: $mobile-sz - 2vw;
+			text-align: center;
+			margin-bottom: 7vw;
+
+			animation-name: pulse;
+			animation-duration: 2.5s;
+			animation-iteration-count: infinite;
+		}
+
+	.open-pack__info_active {
+			animation: open-pack__info 1s;
+			opacity: 0;
+		}
+
+// Кнопка 'далее'
+
+div {}
+
+	.open-pack__next {
+			background-color: $top-header_bg;
+			color: $top-header_fc;
+			padding: 2vw 12vw;
+			margin: 5vw 0 0 9vw;
+			font-size: $mobile-sz;
+			border-radius: 1vw;
+
+			opacity: 0;
+		}
+
+	.open-pack__next_active {
+			opacity: 1;
+			animation: open-pack__next 6s;
+		}
+
+// Информация о результате
+
+div {}
+
+	.open-pack__result {
+			color: $gold-fc;
+			font-size: $mobile-sz - 2vw;
+			text-align: center;
+			margin-bottom: 7vw;
+
+			display: none;
+		}
+
+	.open-pack__result_active {
+			display: block;
+			animation: open-pack__next 5s;
+		}
+
+// Малые девайсы («ландшафтные телефоны», >= 576px)
+@media (min-width: 576px) { }
+
+// Средние девайсы («таблетки», >= 768px)
+div {}
+@media (min-width: 768px) { 
+
+// Карточка и BG
+
+div {}
+
+	.main-block {
+			padding: 20vw 27vw 50vw;
+		}
+
+	.open-pack__button {
+			width: 46vw;
+			height: 71vw;
+		}
+
+// Надпись над паком
+
+div{}
+
+	.open-pack__info {
+			font-size: $tablet-sz - 1.4vw;
+		}
+
+// Кнопка 'далее'
+
+div {}
+
+	.open-pack__next {
+			padding: 2vw 12vw;
+		    margin: 5vw 0 0 3vw;
+		    font-size: $tablet-sz;
+		    border-radius: 1.5vw;
+		}
+
+// Информация о результате
+
+div {}
+
+	.open-pack__result {
+			font-size: $tablet-sz - 1.4vw;
+		}
+}
+
+// Большие девайсы (десктопы, >= 992px)
+div {}
+@media (min-width: 992px) { 
+
+// Карточка и BG
+
+div {}
+
+	.main-block {
+			padding: 5vw 38vw 10vw;
+		}
+
+	.open-pack__button {
+			width: 24vw;
+			height: 38vw;
+		}
+
+// Надпись над паком
+
+div{}
+
+	.open-pack__info {
+			font-size: $desktop-sz - 0.8vw;
+			margin-bottom: 3vw;
+		}
+
+// Кнопка 'далее'
+
+div {}
+
+	.open-pack__next {
+			padding: 1.5vw 5vw;
+		    margin: 4vw 0 0 2vw;
+		    font-size: $desktop-sz;
+		    border-radius: 0.7vw;
+		}
+
+	.open-pack__next > a:hover {
+			color: #d3be67;
+		}
+
+// Информация о результате
+
+div {}
+
+	.open-pack__result {
+			font-size: $desktop-sz - 0.8vw;
+			margin-bottom: 3vw;
+		}
+ }
+
+
+// Экстрабольшие девайсы (большие десктопы, >= 1200px)
+div {}
+@media (min-width: 1200px) { 
+
+// Карточка и BG
+
+div {}
+
+	.main-block {
+			padding: 10vw 42vw 30vw;
+		}
+
+	.open-pack__button {
+			width: 16vw;
+			height: 25vw;
+		}
+
+	// Надпись над паком
+
+div{}
+
+	.open-pack__info {
+			font-size: $large-sz - 0.3vw;
+		}
+
+// Кнопка 'далее'
+
+div {}
+
+	.open-pack__next {
+			padding: 1vw 3vw;
+		    margin: 0.5vw 0 0 1.5vw;
+		    font-size: $large-sz;
+		    border-radius: 0.5vw;
+		}
+
+// Информация о результате
+
+div {}
+
+	.open-pack__result {
+			font-size: $large-sz - 0.3vw;
+		}
+}
