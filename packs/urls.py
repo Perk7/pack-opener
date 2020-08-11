@@ -11,4 +11,8 @@ urlpatterns = [
     path('shop', views.shop),
     path('donate', views.donate),
     path('reset', views.reset),
+
+    path('open_pack', views.open_pack),
+    path('save_card', views.save_card),
+    path('collection_clear', views.collection_clear),
 ]

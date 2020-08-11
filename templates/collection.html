@@ -11,14 +11,14 @@
 	<div class="item_active__shadow-block display-none"></div>
 	<div class="main-block">
 		<div class="collection__progressbar progress">
-		  <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 24%; background: linear-gradient(#eedf88, #ccba6a);"></div>
+		  <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%; background: linear-gradient(#eedf88, #ccba6a);"></div>
 		</div>
 		<section class="collection__block col-12 col-xl-10 offset-xl-1">
-		  <div class="collection__item"><img src="{% static 'img/collection-items/collection-item-1.png' %}" alt="Карта" class="collection__item__image"></div>
-		  <div class="collection__item"><img src="{% static 'img/collection-items/collection-item-2.png' %}" alt="Карта" class="collection__item__image"></div>
-		  <div class="collection__item"><img src="{% static 'img/collection-items/collection-item-3.png' %}" alt="Карта" class="collection__item__image"></div>
-		  <div class="collection__item"><img src="{% static 'img/collection-items/collection-item-4.png' %}" alt="Карта" class="collection__item__image"></div>
-		  <div class="collection__item"><img src="{% static 'img/collection-items/collection-item-5.png' %}" alt="Карта" class="collection__item__image"></div>
+		{% if collection %}
+		  {% for item in collection %}
+		  <div class="collection__item"><img src="{{item.img}}" alt="Карта" class="collection__item__image"></div>
+		  {% endfor %}		  
+		{% endif %}
 		</section>
 	</div>
 {% endblock body %}

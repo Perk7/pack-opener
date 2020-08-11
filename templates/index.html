@@ -9,10 +9,15 @@
 
 {% block body %}
 	<div class="main-block">
-		<h3 class="open-pack__info">CLICK TO OPEN &#9660</h3>
-		<h3 class="open-pack__result">QuickSell of card</h3>
-		<button class="open-pack__button"></button>
-		<button class="open-pack__next"><a href="">NEXT &#8594</a></button>
+		<h3 class="open-pack__info">CLICK TO OPEN &#9660</h3> 
+		<h3 class="open-pack__result">{{info}}</h3>
+		<button class="open-pack__button"><img class="open-pack__img" src="{{pack.icon.url}}" alt="pack"></button>
+		<img class="card__img display-none" src="{{card.image.url}}" alt="card">
+		<form action="save_card" method="POST">
+			{% csrf_token %}
+			<input name="card" type="text" value="{{card.name}}" style="display: none;">
+			<button type="submit" class="open-pack__next">SAVE &#8594</button>
+		</form>
 	</div>
 {% endblock body %}
 {% block scripts %}

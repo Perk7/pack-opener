@@ -1,0 +1,264 @@
+// Переменные 
+
+@import "main-vars.scss";
+
+// Mobile First
+
+// BG
+
+div {}
+
+	.main-block {
+			min-height: $mobile-hg;
+			background-image: url(../img/index-bg__dark.png);
+			background-size: cover;
+
+			padding: 8vw 4vw;
+		}
+
+// Список паков
+
+div {}
+
+// Пак
+
+div {}
+
+	.list-packs__item {
+			display: grid;
+			grid-template-columns: 25% 1fr;
+			grid-template-rows: ($mobile-sz + 1vw) 1fr 0.25fr;
+			grid-column-gap: 4vw;
+
+			grid-template-areas: "list-packs__img list-packs__header"
+							 	 "list-packs__img list-packs__info"
+							 	 "list-packs__img list-packs__btn";	
+
+			font-weight: 500;
+			color: $top-header-fc;	
+
+			background-color: rgba(67, 67, 67, 0.8);
+			padding: ($mobile-sz - 2) 1vw;
+
+			margin-bottom: 3vw;
+		}
+
+	.list-packs__img {
+			grid-area: list-packs__img;
+			width: 90%;
+			margin-left: 5%;
+		}
+
+	.list-packs__header {
+			grid-area: list-packs__header;
+			font-size: $mobile-sz;
+		}
+
+	.list-packs__info {
+			grid-area: list-packs__info;
+			font-size: $mobile-sz / 2.5;
+			line-height: 3.8vw;
+			width: 80%;
+			margin-top: $mobile-sz / 3;
+		}
+
+	.list-packs__btn {
+			grid-area: list-packs__btn;
+
+			font-size: $mobile-sz - 2vw;
+
+			background-color: #727272;
+
+			font-weight: inherit;
+			color: inherit;	
+			width: 50%;
+			margin: 3vw 0 0 45%;
+		}
+
+	.list-packs__btn__img {
+			height: $mobile-sz - 2vw;
+			margin-bottom: 1vw;
+		}
+
+// Малые девайсы («ландшафтные телефоны», >= 576px)
+div {}
+@media (min-width: 576px) {  }
+
+// Средние девайсы («таблетки», >= 768px)
+div {}
+@media (min-width: 768px) { 
+
+// BG
+
+div {}
+
+	.main-block {
+			padding: 8vw 10vw;
+		}
+
+// Список паков
+
+div {}
+
+// Пак
+
+div {}
+
+	.list-packs__item {
+			grid-template-rows: ($tablet-sz + 1vw) 1fr 0.25fr;
+
+			padding: ($tablet-sz - 2) 1vw;
+
+			margin-bottom: 4vw;
+		}
+
+	.list-packs__img {
+			width: 95%;
+		}
+
+	.list-packs__header {
+			font-size: $tablet-sz;
+		}
+
+	.list-packs__info {
+			font-size: $tablet-sz / 2.5;
+			line-height: 3vw;
+			margin-top: $tablet-sz / 3;
+		}
+
+	.list-packs__btn {
+			font-size: $tablet-sz - 2vw;
+
+			width: 40%;
+			margin: 2vw 0 0 50%;
+
+			padding: 0.6vw 0;
+		}
+
+	.list-packs__btn__img {
+			height: $tablet-sz - 2vw;
+			margin-bottom: 0.6vw;
+		}
+}
+
+// Большие девайсы (десктопы, >= 992px)
+div {}
+@media (min-width: 992px) { 
+
+// BG
+
+div {}
+
+	.main-block {
+			padding: 8vw 15vw;
+		}
+
+// Пак
+
+div {}
+
+	.list-packs__item {
+			grid-template-rows: ($desktop-sz + 1vw) 1fr 0.25fr;
+
+			padding: ($desktop-sz - 1) 1vw;
+
+			margin-bottom: 5vw;
+		}
+
+	.list-packs__header {
+			font-size: $desktop-sz;
+		}
+
+	.list-packs__info {
+			font-size: $desktop-sz / 1.8;
+			line-height: 2.5vw;
+			margin-top: $desktop-sz / 1.5;
+		}
+
+	.list-packs__btn {
+			font-size: $desktop-sz - 1vw;
+
+			width: 40%;
+			margin: 0 0 2vw 50%;
+
+			padding: 0.6vw 0;
+		}
+
+	.list-packs__btn:hover {
+			background-color: $gold-fc;
+			animation: btn-hover 2s;
+		}
+
+	.list-packs__btn__img {
+			height: $desktop-sz - 1vw;
+			margin-bottom: 0.4vw;
+		}
+
+@keyframes btn-hover {
+
+	0% {
+		background-color: #727272;
+		}
+	100% {
+		background-color: $gold-fc;
+		}
+	}
+}
+
+// Экстрабольшие девайсы (большие десктопы, >= 1200px)
+div {}
+@media (min-width: 1200px) { 
+
+
+// BG
+
+div {}
+
+	.main-block {
+			padding: 8vw 2vw;
+		}
+
+	.list-packs {
+			padding: 0;	
+		}
+
+// Пак
+
+div {}
+
+	.list-packs__item {
+			grid-template-rows: ($large-sz + 1vw) 1fr 0.25fr;
+
+			padding: ($large-sz - 1) 1vw;
+
+			margin-bottom: 5vw;
+			margin-left: 5vw;
+			display: inline-grid;
+
+			grid-column-gap: 2vw;
+		}
+
+	.list-packs__header {
+			font-size: $large-sz;
+		}
+
+	.list-packs__info {
+			font-size: $large-sz / 1.8;
+			line-height: 1.7vw;
+			margin-top: $large-sz / 2;
+		}
+
+	.list-packs__btn {
+			font-size: $large-sz - 0.8vw;
+
+			width: 45%;
+			margin: 0 0 1vw 45%;
+
+			padding: 0.6vw 0;
+		}
+
+	.list-packs__btn__img {
+			height: $large-sz - 0.8vw;
+			margin-bottom: 0.2vw;
+		}
+}

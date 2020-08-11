@@ -41,6 +41,10 @@
   width: 50%;
   margin: 3vw 0 0 45%; }
 
+.btn_disabled {
+  background-color: #616161;
+  color: #cbcbcb; }
+
 .list-packs__btn__img {
   height: 5vw;
   margin-bottom: 1vw; }
@@ -90,6 +94,9 @@
   .list-packs__btn:hover {
     background-color: #d3be67;
     animation: btn-hover 2s; }
+  .btn_disabled:hover {
+    background-color: #515151;
+    animation: none; }
   .list-packs__btn__img {
     height: 2vw;
     margin-bottom: 0.4vw; }

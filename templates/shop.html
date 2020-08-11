@@ -10,24 +10,24 @@
 {% block body %}
 	<div class="main-block">
 		<div class="list-packs container-fluid">
+		{% if packs %}
+			{% for pack in packs %}
 			<div class="list-packs__item col-12 col-xl-5">
-				<img src="{% static 'img/packs/tots.png' %}" alt="tots" class="list-packs__img">
-				<h2 class="list-packs__header">TOTS PACK</h2>
-				<p class="list-packs__info">Ultimate pack, At least 1 TOTS, only 81+ card, improved chance of packing special and high rated players</p>
-				<button class="list-packs__btn">2000 <img class="list-packs__btn__img" src="{% static 'img/price-of-money.svg' %}" alt="Деньги"></button>
+				<img src="{{pack.icon.url}}" alt="{{pack.name}}" class="list-packs__img">
+				<h2 class="list-packs__header">{{pack.name}}</h2>
+				<p class="list-packs__info">{{pack.prescript}}</p>
+				<form action="open_pack" method="POST">
+					{% csrf_token %}
+					<input name="pack" type="text" value="{{pack.name}}" style="display: none;">
+					{% if all_money >= pack.cost %}
+					<button type="submit" class="list-packs__btn">{{pack.cost}} <img class="list-packs__btn__img" src="{% static 'img/price-of-money.svg' %}" alt="Деньги"></button>
+					{% else %}
+					<button type="submit" class="list-packs__btn btn_disabled" disabled>{{pack.cost}} <img class="list-packs__btn__img" src="{% static 'img/price-of-money.svg' %}" alt="Деньги"></button>
+					{% endif %}
+				</form>
 			</div>
-			<div class="list-packs__item col-12 col-xl-5">
-				<img src="{% static 'img/packs/special.png' %}" alt="special" class="list-packs__img">
-				<h2 class="list-packs__header">SPECIAL PACK</h2>
-				<p class="list-packs__info">Ultimate pack, At least 1 TOTS, only 81+ card, improved chance of packing special and high rated players</p>
-				<button class="list-packs__btn">2000 <img class="list-packs__btn__img" src="{% static 'img/price-of-money.svg' %}" alt="Деньги"></button>
-			</div>
-			<div class="list-packs__item col-12 col-xl-5">
-				<img src="{% static 'img/packs/premium.png' %}" alt="premium" class="list-packs__img">
-				<h2 class="list-packs__header">PREMIUM PACK</h2>
-				<p class="list-packs__info">Ultimate pack, At least 1 TOTS, only 81+ card, improved chance of packing special and high rated players</p>
-				<button class="list-packs__btn">2000 <img class="list-packs__btn__img" src="{% static 'img/price-of-money.svg' %}" alt="Деньги"></button>
-			</div>
+			{% endfor %}
+		{% endif %}
 		</div>
 	</div>
 {% endblock body %}

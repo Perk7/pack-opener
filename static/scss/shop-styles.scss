@@ -74,6 +74,11 @@ div {}
 			width: 50%;
 			margin: 3vw 0 0 45%;
 		}
+	
+	.btn_disabled {
+			background-color: #616161;
+			color: #cbcbcb;
+		}
 
 	.list-packs__btn__img {
 			height: $mobile-sz - 2vw;
@@ -187,6 +192,11 @@ div {}
 	.list-packs__btn:hover {
 			background-color: $gold-fc;
 			animation: btn-hover 2s;
+		}
+
+	.btn_disabled:hover {
+			background-color: #515151;
+			animation: none;
 		}
 
 	.list-packs__btn__img {
