@@ -40,8 +40,7 @@ div {}
 			height: $mobile-hg;
 			padding-top: 15vw;
 
-			background-image: url(../img/index-bg__dark.png);
-			background-size: cover;
+			background-color: #333333;
 		}
 
 // Надпись над кнопкой
@@ -50,8 +49,8 @@ div {}
 
 	.page__info {
 			font-size: $mobile-sz - 2vw;
-			width: 62%;
-			margin-left: 19%;
+			width: 66%;
+    		margin-left: 17%;
 			color: #FFF;
 			font-weight: 500;
 		}
@@ -62,12 +61,11 @@ div {}
 
 	.page__btn {
 			font-size: $mobile-sz - 2vw;
-			padding: 2vw 5vw;
+			padding: 2vw 10vw;
 			background-color: $top-header_bg;
 			color: $top-header_fc;
 			font-weight: 500;
-			border-radius: 1vw;
-			margin: 10vw 0 0 35vw;
+			margin: 10vw 0 0 30vw;
 		}
 
 	.reset__img {
@@ -121,9 +119,8 @@ div {}
 
 	.page__btn {
 			font-size: $tablet-sz - 1vw;
-			padding: 2vw 6vw;
-			border-radius: 1.5vw;
-			margin: 10vw 0 0 36.5vw;
+			padding: 2vw 9vw;
+			margin: 10vw 0 0 32.5vw;
 		}
 
 	.reset__img {
@@ -160,9 +157,8 @@ div {}
 
 	.page__btn {
 			font-size: $desktop-sz;
-		    padding: 1.5vw 5vw;
-		    border-radius: 1vw;
-			margin: 7vw 0 0 39.5vw;
+		    padding: 1vw 7vw;
+		    margin: 7vw 0 0 37.5vw;
 		}
 
 	.reset__img {
@@ -200,9 +196,8 @@ div {}
 
 	.page__btn {
 			font-size: $large-sz;
-		    padding: 1vw 4.5vw;
-		    border-radius: 0.5vw;
-		    margin: 5vw 0 0 41.5vw;
+		    padding: 1vw 7.5vw;
+		    margin: 5vw 0 0 38.5vw;
 		}
 
 	.reset__img {

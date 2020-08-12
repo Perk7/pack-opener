@@ -16,10 +16,13 @@ def index(request):
 
 def collection(request):
 	collection = Collection(request)
-	progress = len(collection)*100/Card.objects.all().count() if len(collection) else 0
-	return render(request, 'collection.html', {'collection' : collection,
-											   'progress' : int(progress)})
+	collection = list(collection.session.values())
+	collection_sorted = sorted(collection, key=lambda card: card['raiting'], reverse=True)
 
+	progress = len(collection)*100/Card.objects.all().count() if len(collection) else 0
+	return render(request, 'collection.html', {'collection' : collection_sorted,
+											   'progress' : int(progress)})
+ 
 def shop(request):
 	packs = Pack.objects.exclude(name='DEFAULT PACK').order_by('cost')
 	if packs:
@@ -31,7 +34,6 @@ def donate(request):
 
 def reset(request):
 	return render(request, 'reset.html')
-
 
 def open_pack(request):
 	if request.method == 'POST':
@@ -45,15 +47,16 @@ def open_pack(request):
 										 	  'pack' : pack,
 										  	  'info' : info})
 
-def save_card(request):
+def save_card(request, redir):
 	collection = Collection(request)
 	if request.method == 'POST':
 		card_name = request.POST['card']
 		card = Card.objects.get(name = card_name)
-		if card not in collection.session.keys():
-			collection.add(card)
+		if card_name in collection.session.keys():
 			request.session["money"] += card.quicksell
-		return redirect('/')
+		if card_name not in collection.session.keys():
+			collection.add(card)
+		return redirect('/' + redir)
 
 def collection_clear(request):
     collection = Collection(request)
@@ -61,3 +64,8 @@ def collection_clear(request):
     request.session["money"] = 0
     return redirect('/collection')
 
+def pay_donate(request):
+	return redirect('https://my.qiwi.com/Denys-PMkfk6zW-Z')
+
+def index_redir(request):
+	return redirect('/')

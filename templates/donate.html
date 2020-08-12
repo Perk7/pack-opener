@@ -10,7 +10,10 @@
 {% block body %}
 	<div class="main-block">		
 		<p class="page__info text-center">If you want to help the developer financially, you can transfer money to him:</p>
-		<button class="page__btn donate__btn">SEND &#8594</button>
+		<form action="pay_donate" method="POST">
+			{% csrf_token %}
+			<button type="submit" class="page__btn donate__btn">SEND <img class="reset__img"  src="{% static 'img/donate-icon.svg' %}" alt="OP"></button>
+		</form>
 	</div>
 {% endblock body %}
 {% block scripts %}

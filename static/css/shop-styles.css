@@ -1,7 +1,6 @@
 .main-block {
   min-height: 205vw;
-  background-image: url(../img/index-bg__dark.png);
-  background-size: cover;
+  background-color: #333333;
   padding: 8vw 4vw; }
 
 .list-packs__item {

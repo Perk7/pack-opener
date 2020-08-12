@@ -13,6 +13,9 @@ urlpatterns = [
     path('reset', views.reset),
 
     path('open_pack', views.open_pack),
-    path('save_card', views.save_card),
+    path('save_card(?P<redir>.*)$', views.save_card, name='save_card'),
     path('collection_clear', views.collection_clear),
+
+    path('pay_donate', views.pay_donate),
+    path('index_redir', views.index_redir),
 ]

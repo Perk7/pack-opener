@@ -78,7 +78,7 @@ div {}
 	.main-block {
 			background-image: url(../img/index-bg.png);
 			background-size: cover;
-			padding: 15vw 17.5vw 50vw;
+			padding: 15vw 17.5vw 40vw;
 		}
 
 	.open-pack__button {
@@ -137,10 +137,10 @@ div {}
 	.open-pack__next {
 			background-color: $top-header_bg;
 			color: $top-header_fc;
-			padding: 2vw 12vw;
-			margin: 5vw 0 0 9vw;
+			padding: 2vw 15vw;
+			margin: 5vw 0 0 9.5vw;
 			font-size: $mobile-sz;
-			border-radius: 1vw;
+			border-radius: 0;
 
 			opacity: 0;
 		}
@@ -149,6 +149,11 @@ div {}
 			opacity: 1;
 			animation: open-pack__next 6s;
 		}
+
+	.open-pack__next:hover {
+			color: $gold-fc;
+		}
+		
 
 // Информация о результате
 
@@ -180,7 +185,7 @@ div {}
 div {}
 
 	.main-block {
-			padding: 20vw 27vw 50vw;
+			padding: 20vw 27vw 30vw;
 		}
 
 	.open-pack__button {
@@ -209,10 +214,9 @@ div{}
 div {}
 
 	.open-pack__next {
-			padding: 2vw 12vw;
-		    margin: 5vw 0 0 3vw;
 		    font-size: $tablet-sz;
-		    border-radius: 1.5vw;
+		    padding: 2vw 12vw;
+    		margin: 5vw 0 0 5vw;
 		}
 
 // Информация о результате
@@ -263,10 +267,9 @@ div{}
 div {}
 
 	.open-pack__next {
-			padding: 1.5vw 5vw;
-		    margin: 4vw 0 0 2vw;
 		    font-size: $desktop-sz;
-		    border-radius: 0.7vw;
+			padding: 1vw 5.7vw;
+		    margin: 4vw 0 0 2.6vw;
 		}
 
 	.open-pack__next > a:hover {
@@ -293,7 +296,7 @@ div {}
 div {}
 
 	.main-block {
-			padding: 10vw 42vw 30vw;
+			padding: 10vw 42vw 15vw;
 		}
 
 	.open-pack__button {
@@ -322,10 +325,9 @@ div{}
 div {}
 
 	.open-pack__next {
-			padding: 1vw 3vw;
-		    margin: 0.5vw 0 0 1.5vw;
+		    padding: 0.5vw 5vw;
+		    margin: 1vw 0 0 0.5vw;
 		    font-size: $large-sz;
-		    border-radius: 0.5vw;
 		}
 
 // Информация о результате
