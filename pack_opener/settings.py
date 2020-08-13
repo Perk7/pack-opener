@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -131,3 +132,18 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+import dj_database_url
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dbsqla1aaapcqe',
+        'USER': 'ysylgzwujtsuul',
+        'PASSWORD': '2a44cb29440723df48539876fa0693dccb318d522814b78aaed0d246f18b7239',
+        'HOST': 'ec2-50-16-198-4.compute-1.amazonaws.com', 
+        'PORT': '5432',
+    }
+}
+
+django_heroku.settings(locals())
