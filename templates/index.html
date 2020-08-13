@@ -13,7 +13,7 @@
 		<h3 class="open-pack__result">{{info}}</h3>
 		<button class="open-pack__button"><img class="open-pack__img" src="{{pack.icon.url}}" alt="pack"></button>
 		<img class="card__img display-none" src="{{card.image.url}}" alt="card">
-		<form action="{% url 'packs:save_card' 'index_redir' %}" method="POST">
+		<form action="save_card" method="POST">
 			{% csrf_token %}
 			<input name="card" type="text" value="{{card.name}}" style="display: none;">
 			<button type="submit" class="open-pack__next">NEXT</button>

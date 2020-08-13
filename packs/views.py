@@ -47,7 +47,7 @@ def open_pack(request):
 										 	  'pack' : pack,
 										  	  'info' : info})
 
-def save_card(request, redir):
+def save_card(request):
 	collection = Collection(request)
 	if request.method == 'POST':
 		card_name = request.POST['card']
@@ -56,7 +56,7 @@ def save_card(request, redir):
 			request.session["money"] += card.quicksell
 		if card_name not in collection.session.keys():
 			collection.add(card)
-		return redirect('/' + redir)
+		return redirect('/')
 
 def collection_clear(request):
     collection = Collection(request)
@@ -66,6 +66,3 @@ def collection_clear(request):
 
 def pay_donate(request):
 	return redirect('https://my.qiwi.com/Denys-PMkfk6zW-Z')
-
-def index_redir(request):
-	return redirect('/')
