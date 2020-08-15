@@ -18,7 +18,7 @@ class Card(models.Model):
 	raiting = models.IntegerField()
 	typecard = models.CharField(max_length=10)
 
-	pubdate = models.DateTimeField(default=datetime.now())
+	pubdate = models.DateTimeField(default=timezone.now)
 
 	class Meta:
 	    verbose_name = 'Карточка'
