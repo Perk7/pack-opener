@@ -48,7 +48,7 @@ class Pack(models.Model):
 	cost = models.IntegerField()
 	icon = models.ImageField(upload_to='packs', height_field=None, width_field=None, max_length=100)
 
-	pubdate = models.DateTimeField(default=datetime.now())
+	pubdate = models.DateTimeField(default=timezone.now)
 
 	class Meta:
 	    verbose_name = 'Пак'
