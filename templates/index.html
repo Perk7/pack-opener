@@ -11,8 +11,8 @@
 	<div class="main-block">
 		<h3 class="open-pack__info">CLICK TO OPEN &#9660</h3> 
 		<h3 class="open-pack__result">{{info}}</h3>
-		<button class="open-pack__button"><img class="open-pack__img" src="{{pack.icon.url}}" alt="pack"></button>
-		<img class="card__img display-none" src="{{card.image.url}}" alt="card">
+		<button class="open-pack__button"><img class="open-pack__img" src="{{pack.icon}}" alt="pack"></button>
+		<img class="card__img display-none" src="{{card.image}}" alt="card">
 		<form action="save_card" method="POST">
 			{% csrf_token %}
 			<input name="card" type="text" value="{{card.name}}" style="display: none;">

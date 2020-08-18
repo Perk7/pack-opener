@@ -13,7 +13,7 @@
 		{% if packs %}
 			{% for pack in packs %}
 			<div class="list-packs__item col-12 col-xl-5">
-				<img src="{{pack.icon.url}}" alt="{{pack.name}}" class="list-packs__img">
+				<img src="{{pack.icon}}" alt="{{pack.name}}" class="list-packs__img">
 				<h2 class="list-packs__header">{{pack.name}}</h2>
 				<p class="list-packs__info">{{pack.prescript}}</p>
 				<form action="open_pack" method="POST">
