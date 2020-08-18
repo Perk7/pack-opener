@@ -13,7 +13,7 @@ import random
 class Card(models.Model):
 	name = models.CharField(max_length=16)
 	quicksell = models.IntegerField()
-	image = models.CharField(max_length=100)
+	image = models.CharField(max_length=500)
 
 	raiting = models.IntegerField()
 	typecard = models.CharField(max_length=10)
@@ -46,7 +46,7 @@ class Pack(models.Model):
 	name = models.CharField(max_length=16)
 	prescript = models.TextField(max_length=105)
 	cost = models.IntegerField()
-	icon = models.CharField(max_length=100)
+	icon = models.CharField(max_length=500)
 	#icon = models.ImageField(upload_to='packs', height_field=None, width_field=None, max_length=100)
 
 	pubdate = models.DateTimeField(default=timezone.now)
