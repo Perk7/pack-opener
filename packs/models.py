@@ -135,12 +135,12 @@ class Collection(object):
 			self.remove(Card.objects.get(name = i))
 
 	def update(self):
-		it = list(self.session.values())
+		it = list(self.session.keys())
 
 		self.clear()
 
 		for i in it:
-			collect = Card.objects.get(id = i['product_id'])
+			collect = Card.objects.get(id = i)
 			self.add(collect)
 
 		self.save()
