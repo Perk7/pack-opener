@@ -140,7 +140,7 @@ class Collection(object):
 		self.clear()
 
 		for i in it:
-			collect = Card.objects.get(id = i)
+			collect = Card.objects.get(name = i)
 			self.add(collect)
 
 		self.save()
