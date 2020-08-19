@@ -133,3 +133,14 @@ class Collection(object):
 		it = deepcopy(self.session)
 		for i in it.keys():
 			self.remove(Card.objects.get(name = i))
+
+	def update(self):
+		it = list(self.session.values())
+
+		self.clear()
+
+		for i in it:
+			collect = Card.objects.get(id = i['product_id'])
+			self.add(collect)
+
+		self.save()

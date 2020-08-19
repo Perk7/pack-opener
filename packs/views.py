@@ -16,6 +16,9 @@ def index(request):
 
 def collection(request):
 	collection = Collection(request)
+    collection.update()
+    collection = Collection(request)
+    
 	collection = list(collection.session.values())
 	collection_sorted = sorted(collection, key=lambda card: card['raiting'], reverse=True)
 
